@@ -1,0 +1,514 @@
+/*
+ Theme Name:   KNatcon2020
+ Theme URI:    http://example.com/twenty-fifteen-child/
+ Description:  Twenty Twenty Child Theme
+ Author:       Aaron Snowberger
+ Author URI:   https://aaron.kr
+ Template:     twentytwenty
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+ Text Domain:  knatcon2020
+*/
+
+:root {
+	--barlow-wght: 60;
+  --barlow-wdth: 500;
+  --recursive-wght: 700;
+  --recursive-wdth: 300;
+  --recursive-CASL: 0;
+}
+
+/* Root Color -------------------------------- */
+body:not(.overlay-header) .primary-menu > li > a,
+body:not(.overlay-header) .primary-menu > li > .icon,
+.modal-menu a,
+.footer-menu a,
+.footer-widgets a,
+#site-footer .wp-block-button.is-style-outline,
+.wp-block-pullquote:before,
+.singular:not(.overlay-header) .entry-header a,
+.archive-header a,
+.header-footer-group .color-accent,
+.header-footer-group .color-accent-hover:hover,
+.color-accent,
+.color-accent-hover:hover,
+.color-accent-hover:focus,
+:root .has-accent-color,
+.has-drop-cap:not(:focus):first-letter,
+.wp-block-button.is-style-outline,
+a {
+	color: rgb(0,120,50);
+	border-bottom: none;
+}
+
+.singular:not(.overlay-header) .entry-header a,
+.archive-header a,
+.entry-categories a {
+	border-bottom: 3px solid transparent;
+}
+
+.singular:not(.overlay-header) .entry-header a:hover,
+.archive-header a:hover,
+.singular:not(.overlay-header) .entry-header a.active,
+.archive-header a.active,
+.singular:not(.overlay-header) .entry-header a:focus,
+.archive-header a:focus,
+.entry-categories a:hover,
+.entry-categories a.active,
+.entry-categories a:focus {
+	border-bottom: 3px solid currentColor;
+}
+
+button:not(.toggle),
+.button,
+.faux-button,
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.bg-accent,
+.bg-accent-hover:hover,
+.bg-accent-hover:focus,
+:root .has-accent-background-color,
+.comment-reply-link,
+.social-icons a {
+	background-color: rgb(0,120,50);
+}
+
+button:not(.toggle),
+.button,
+.faux-button,
+.wp-block-button__link,
+.wp-block-file .wp-block-file__button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.comment-reply-link {
+	border-radius: 10px;
+}
+
+blockquote,
+.border-color-accent,
+.border-color-accent-hover:hover,
+.border-color-accent-hover:focus {
+	border-color: rgb(0,120,50);
+}
+
+.entry-content hr:not(.has-background),
+hr.styled-separator {
+	color: rgba(176,190,197,1);
+	background: transparent;
+	border-bottom: 1px solid rgba(176,190,197,1);
+}
+
+.entry-content hr:not(.has-background):before,
+hr.styled-separator:before,
+.entry-content hr:not(.has-background):after,
+hr.styled-separator:after {
+	display: none;
+}
+
+/* Font Families ----------------------------- */
+body,
+.entry-content p,
+.entry-content ol,
+.entry-content ul,
+.entry-content dl,
+.entry-content dt,
+.widget_text p,
+.widget_text ol,
+.widget_text ul,
+.widget_text dl,
+.widget_text dt,
+.widget-content .rssSummary,
+input,
+textarea,
+button,
+.button,
+.faux-button,
+.faux-button.more-link,
+.wp-block-button__link,
+.wp-block-file__button,
+.widget-content cite,
+.widget-content figcaption,
+.widget-content .wp-caption-text,
+.entry-content .wp-block-archives *,
+.entry-content .wp-block-categories *,
+.entry-content .wp-block-latest-posts *,
+.entry-content .wp-block-latest-comments *,
+.entry-content cite,
+.entry-content figcaption,
+.entry-content table,
+.entry-content address,
+.entry-content .wp-caption-text,
+.entry-content .wp-block-file {
+	font-family: "Barlow", "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-variation-settings: 'wght' var(--barlow-wght), 'wdth' var(--barlow-wdth);
+	line-height: 1.4;
+}
+
+.wp-block-quote.is-large p, .wp-block-quote.is-style-large p {
+	font-family: "Barlow", "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	font-variation-settings: 'wght' var(--barlow-wght), 'wdth' var(--barlow-wdth);
+	line-height: 1.4;
+	--barlow-wght: 40;
+}
+
+/* Pull Quotes ----------------------------- */
+.wp-block-pullquote::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 2rem;
+	padding: 10px;
+	content: "\f10e";
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body {  
+	color: #101025;
+	background: #fff;
+}
+
+em {
+  opacity: 0.7;
+  font-weight: 100;
+  --barlow-wght: 50;
+}
+
+h1, h2, h3, h4, h5, h6,
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.faux-heading {
+  font-family: "Recursive", "Open Sans Condensed", Arial, Helvetica, sans-serif;
+  /* margin-bottom: 0.75rem;
+  margin-top: 1.5rem; */
+  letter-spacing: -0.04em;
+  font-variation-settings: 'wgth' var(--recursive-wght), 'wdth' var(--recursive-wdth), 'CASL' var(--recursive-CASL);
+	color: #101025;
+}
+
+h1, .heading-size-1 {
+  font-size: 4.6rem;
+}
+
+h2, .heading-size-2 {
+  font-size: 4rem;
+}
+
+h3, .heading-size-3 {
+  font-size: 3.4rem;
+}
+
+h4, .heading-size-4 {
+  font-size: 2.8rem;
+}
+
+h5, .heading-size-5 {
+  font-size: 2.2rem;
+}
+
+h6, .heading-size-6 {
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 50rem) {
+  h1, .heading-size-1 {
+    font-size: 4rem;
+  }
+
+  h2, .heading-size-2 {
+    font-size: 3.4rem;
+  }
+
+  h3, .heading-size-3 {
+    font-size: 2.8rem;
+  }
+
+  h4, .heading-size-4 {
+    font-size: 2.2rem;
+  }
+
+  h5, .heading-size-5 {
+    font-size: 1.4rem;
+  }
+
+  h6, .heading-size-6 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 36rem) {
+  h1, .heading-size-1 {
+    font-size: 3.4rem;
+  }
+
+  h2, .heading-size-2 {
+    font-size: 2.8rem;
+  }
+
+  h3, .heading-size-3 {
+    font-size: 2.2rem;
+  }
+
+  h4, .heading-size-4 {
+    font-size: 1.4rem;
+  }
+
+  h5, .heading-size-5 {
+    font-size: 1.2rem;
+  }
+
+  h6, .heading-size-6 {
+    font-size: 1rem;
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.note {
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.red-text {
+  color: #ec174f!important;
+}
+
+.purple-highlight {
+  background: rgba(75,12,120,0.2);
+  border-radius: 10px;
+}
+
+.center {
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+	.entry-content {
+			font-size: 1.8rem;
+	}
+}
+
+.pagination-single,
+.footer-menu {
+	font-size: 2rem;
+}
+
+.widget-content {
+	font-size: 1.8rem;
+}
+
+/* Background Image Header ------------------- */
+.singular .entry-header,
+.archive-header {
+	background: linear-gradient(135deg, rgba(107,184,139,1) 15%, rgba(242,231,162,1) 35%, rgba(234,176,155,1) 55%, rgba(237,169,172,1) 75%);
+	padding: 4rem 0;
+	z-index: 0;
+  position: relative;
+}
+
+.singular .entry-header:after,
+.archive-header:after {
+	background-image: url(/wp-content/themes/knatcon2020/img/brush-stroke-bg-dk.png);
+	z-index: -1;
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-size: cover;
+	background-position: center top;
+}
+
+.singular .entry-title,
+.archive-title {
+	text-align: center;
+	margin-top: 0;
+	text-shadow: 0px 2px 4px rgba(0,0,0,0.36);
+	color: white;
+}
+
+.singular .entry-title{
+	font-size: 6rem;
+}
+
+.singular .intro-text {
+	text-shadow: 1px 2px 4px rgba(0,0,0,0.64);
+	color: white;
+}
+
+h2.entry-title {
+	font-size: 6rem;
+}
+
+/* Modals --------------------------- */
+.menu-modal.active,
+.search-modal.active {
+	background: rgba(16,16,37,0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* Site Header ---------------------- */
+body.home:after {
+	background: linear-gradient(125deg, rgba(0, 120, 100, 1) 0%, rgb(61, 184, 129) 25%, rgb(251, 209, 161) 40%, rgb(239, 120, 138) 60%, rgb(102, 78, 160) 100%);
+	content: '';
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -2;
+}
+
+body.home:before{
+	background-image: url(https://kotesolconf.com/img/bg/brush-stroke-bg-dk.png);
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center top;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+/* Fixed Top Menu ----------------------------- */
+body {
+	margin-top: 100px;
+}
+
+#site-header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	/* box-shadow: 4px 8px 16px rgba(0,0,0,0.14); */
+	transition: all 0.5s;
+
+	background: rgb(255,255,255);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	backdrop-filter: blur(1px);
+	color: #101025;
+	z-index: 10;
+}
+
+#site-header.top {
+	background: transparent;
+	box-shadow: none;
+	/* height: 100px; */
+	transition: all 0.3s;
+	backdrop-filter: none;
+}
+
+/* Footer Widgets ---- */
+.footer-widgets-wrapper {
+	display: block;
+	width: 100%;
+	margin: 0;
+}
+
+.footer-widgets.column-one.grid-item,
+.footer-widgets.column-two.grid-item  {
+	width: 100%;
+	margin: 0;
+	display: grid;
+	grid-template-columns: repeat(3, calc( 33% - 3rem) );
+	grid-gap: 5rem;
+}
+
+.footer-widgets.column-two.grid-item {
+	margin-top: 5rem;
+	padding-top: 5rem;
+	border-top: 1px solid rgba(75,12,120, 0.2);
+	grid-template-columns: repeat(5, calc( 20% - 4rem) );
+}
+
+.footer-widgets.column-one .widget,
+.footer-widgets.column-two .widget {
+	margin-top: 0;
+}
+
+#site-footer {
+	background: rgb(0,120,50);
+	color: white;
+}
+
+#site-footer a {
+	color: rgba(255,255,255,0.8);
+}
+
+/* Footer Colophon Menu ---- */
+#colophon {
+	background: #101025;
+	text-align: center;
+}
+
+#colophon ul {
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.footer-colophon-menu {
+	padding-top: 2rem;
+	padding-bottom: 3.3rem;
+}
+
+.footer-colophon-menu .footer-menu-wrapper {
+	margin: 0 auto;
+}
+
+.colophon-menu {
+	font-size: 1.6rem;
+	font-weight: 400;
+}
+
+.footer-colophon-menu li {
+	display: inline-block;
+}
+
+.footer-colophon-menu a {
+	color: #6d6d6d;
+}
+
+.footer-colophon-menu li:first-child {
+	list-style-type: none;
+	margin-left: 0;
+}
+
+/* Error 404 Widgets ----------------------------- */
+.error404-widgets {
+	display: grid;
+	grid-template-columns: repeat(4, calc( 25% - 3.75rem ) );
+	grid-gap: 5rem;
+	margin-top: 5rem;
+	padding-top: 5rem;
+	border-top: 1px solid #dcd7ca;
+}
+
+.error404-widgets .widget,
+.error404-widgets .widgettitle {
+	margin-top: 0;
+}
+
+.error404-widgets .widgettitle {
+	font-size: 4rem;
+}
+
+.error404-media {
+	max-width: 40rem;
+	margin: 0 auto;
+}
