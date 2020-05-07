@@ -75,4 +75,5 @@ Copyright (c) 2019 WordPress.org
 - License: GPLv2
 - License URI: http://www.gnu.org/licenses/gpl-3.0.html
 - Source: https://wordpress.org/themes/twentytwenty/
+
 KNatCon2020 is a Child Theme of Twenty Twenty.
