@@ -9,8 +9,10 @@
  * @since 1.0.0
  */
 
-add_action( 'wp_enqueue_scripts', 'knatcon2020_enqueue_styles' );
+/* Add excerpts to Pages */
+add_post_type_support( 'page', 'excerpt' );
 
+add_action( 'wp_enqueue_scripts', 'knatcon2020_enqueue_styles' );
 /**
  * Enqueue Parent and Child stylesheets.
  */
@@ -100,12 +102,146 @@ function knatcon2020_sidebar_registration() {
 	);
 
 }
-// add_action( 'widgets_init', 'knatcon2020_sidebar_registration' );
+// add_action( 'widgets_init', 'knatcon2020_sidebar_registration' );.
 
 /**
- * Register a new Colophon menu.
+ * Setup Theme.
  */
-function knatcon2020_register_colophon_menu() {
+function knatcon2020_setup_theme() {
+	/**
+	 * Register Colophon menu.
+	 */
 	register_nav_menu( 'colophon', __( 'Colophon Menu', 'knatcon2020' ) );
+
+	/**
+	 * Add support for block color palettes.
+	 *
+	 * @link https://wordpress.org/gutenberg/handbook/extensibility/theme-support/
+	 */
+	$knatcon2020_colors = array(
+		array(
+			'name'  => __( 'Gradient green dark', 'gaya' ),
+			'slug'  => 'gradient-green-dark',
+			'color' => 'rgb(0, 120, 100)',
+		),
+		array(
+			'name'  => __( 'Gradient green light', 'gaya' ),
+			'slug'  => 'gradient-green-light',
+			'color' => 'rgb(61, 184, 129)',
+		),
+		array(
+			'name'  => __( 'Gradient yellow', 'gaya' ),
+			'slug'  => 'gradient-yellow',
+			'color' => 'rgb(251, 209, 161)',
+		),
+		array(
+			'name'  => __( 'Gradient red', 'gaya' ),
+			'slug'  => 'gradient-red',
+			'color' => 'rgb(239, 120, 138)',
+		),
+		array(
+			'name'  => __( 'Gradient purple', 'gaya' ),
+			'slug'  => 'gradient-purple',
+			'color' => 'rgb(102, 78, 160)',
+		),
+		array(
+			'name'  => __( 'Grey', 'gaya' ),
+			'slug'  => 'grey',
+			'color' => 'rgb(176, 190, 197)',
+		),
+		array(
+			'name'  => __( 'Highlight green', 'gaya' ),
+			'slug'  => 'highlight-green',
+			'color' => 'rgb(0, 120, 50)',
+		),
+		array(
+			'name'  => __( 'Highlight purple', 'gaya' ),
+			'slug'  => 'highlight-purple',
+			'color' => 'rgb(75, 12, 120)',
+		),
+		array(
+			'name'  => __( 'Almost black', 'gaya' ),
+			'slug'  => 'almost-black',
+			'color' => '#101025',
+		),
+	);
+
+	add_theme_support(
+		'editor-color-palette',
+		$knatcon2020_colors
+	);
 }
-add_action( 'after_setup_theme', 'knatcon2020_register_colophon_menu' );
+add_action( 'after_setup_theme', 'knatcon2020_setup_theme', 20 );
+
+/**
+ * Redirect Login page (we hope).
+ */
+function knatcon2020_custom_login_page() {
+
+	$new_login_page_url = home_url( '/login/' ); // new login page.
+
+	global $pagenow;
+
+	if ( 'wp-login.php' === $pagenow && isset( $_SERVER['REQUEST_METHOD'] ) && 'GET' === $_SERVER['REQUEST_METHOD'] ) {
+		wp_safe_redirect( $new_login_page_url );
+		exit;
+	}
+}
+
+if ( ! is_user_logged_in() ) {
+	// add_action( 'init', 'knatcon2020_custom_login_page' );
+}
+
+/**
+ * Private Posts visible to Subscribers
+ * Run once
+ */
+function knatcon2020_subscribers_read_private_posts() {
+	$sub_role = get_role( 'subscriber' );
+	$sub_role->add_cap( 'read_private_posts' );
+	$sub_role->add_cap( 'read_private_pages' );
+}
+add_action( 'init', 'knatcon2020_subscribers_read_private_posts' );
+
+/**
+ * Change Jetpack Portfolio slug.
+ *
+ * @param array  $args Arguments for the register_post_type.
+ * @param string $post_type String of the $post_type.
+ *
+ * @link https://docs.themeisle.com/article/888-change-the-slug-of-portfolio-post-type
+ */
+function update_portfolios_slug( $args, $post_type ) {
+	if ( 'jetpack-portfolio' === $post_type ) {
+		$args['rewrite']['slug'] = 'sessions';
+	}
+	return $args;
+}
+add_filter( 'register_post_type_args', 'update_portfolios_slug', 10, 2 );
+// add_filter( 'jetpack_development_mode', '__return_true' );.
+
+/**
+ * Filter the Post Title to remove "Protected" and "Private"
+ *
+ * @param String $title The post title to be filtered.
+ *
+ * @link https://css-tricks.com/snippets/wordpress/remove-privateprotected-from-post-titles/
+ */
+function knatcon2020_title_trim( $title ) {
+
+	$title = esc_attr( $title );
+
+	$findthese = array(
+		'#Protected:#',
+		'#Private:#',
+	);
+
+	$replacewith = array(
+		'', // What to replace "Protected:" with.
+		'', // What to replace "Private:" with.
+	);
+
+	$title = preg_replace( $findthese, $replacewith, $title );
+	return $title;
+}
+add_filter( 'the_title', 'knatcon2020_title_trim' );

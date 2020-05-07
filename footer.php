@@ -23,7 +23,7 @@
 							echo esc_html(
 								date_i18n(
 									/* translators: Copyright date format, see https://secure.php.net/date */
-									_x( 'Y', 'copyright date format', 'edxchildtheme' )
+									_x( 'Y', 'copyright date format', 'knatcon2020' )
 								)
 							);
 							?>
@@ -31,8 +31,8 @@
 						</p><!-- .footer-copyright -->
 
 						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'edxchildtheme' ) ); ?>">
-								<?php esc_html_e( 'Powered by WordPress', 'edxchildtheme' ); ?>
+							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'knatcon2020' ) ); ?>">
+								<?php esc_html_e( 'Powered by WordPress', 'knatcon2020' ); ?>
 							</a>
 						</p><!-- .powered-by-wordpress -->
 
@@ -42,13 +42,13 @@
 						<span class="to-the-top-long">
 							<?php
 							/* translators: %s: HTML character for up arrow */
-							printf( esc_html__( 'To the top %s', 'edxchildtheme' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
+							printf( esc_html__( 'To the top %s', 'knatcon2020' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
 							?>
 						</span><!-- .to-the-top-long -->
 						<span class="to-the-top-short">
 							<?php
 							/* translators: %s: HTML character for up arrow */
-							printf( esc_html__( 'Up %s', 'edxchildtheme' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
+							printf( esc_html__( 'Up %s', 'knatcon2020' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
 							?>
 						</span><!-- .to-the-top-short -->
 					</a><!-- .to-the-top -->
@@ -61,7 +61,7 @@
 
 				<div class="section-inner footer-colophon-menu">
 
-					<nav aria-label="<?php esc_attr_e( 'Colophon Menu', 'edxchildtheme' ); ?>" role="navigation" class="footer-menu-wrapper">
+					<nav aria-label="<?php esc_attr_e( 'Colophon Menu', 'knatcon2020' ); ?>" role="navigation" class="footer-menu-wrapper">
 
 						<ul class="footer-menu colophon-menu">
 							<?php

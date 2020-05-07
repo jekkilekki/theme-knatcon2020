@@ -19,17 +19,17 @@ get_header();
 	</figure>
 
 	<header class="section-inner error404-content">
-		<h1 class="entry-title"><?php esc_html_e( 'Oops! Page Not Found', 'edxchildtheme' ); ?></h1>
+		<h1 class="entry-title"><?php esc_html_e( 'Bad Luck! Page Not Found', 'knatcon2020' ); ?></h1>
 	</header>
 
 	<div class="section-inner thin error404-content">
 
-		<div class="intro-text"><p><?php esc_html_e( 'Nothing was found at this location. Maybe try one of the links below or a search?', 'edxchildtheme' ); ?></p></div>
+		<div class="intro-text"><p><?php esc_html_e( 'Nothing was found here. Maybe try one of the links below or a search?', 'knatcon2020' ); ?></p></div>
 
 		<?php
 		get_search_form(
 			array(
-				'label' => __( '404 not found', 'edxchildtheme' ),
+				'label' => __( '404 not found', 'knatcon2020' ),
 			)
 		);
 		?>
@@ -47,7 +47,7 @@ get_header();
 			?>
 
 			<div class="widget widget_categories">
-				<h2 class="widgettitle"><?php esc_html_e( 'Most Used Categories', 'edxchildtheme' ); ?></h2>
+				<h2 class="widgettitle"><?php esc_html_e( 'Most Used Categories', 'knatcon2020' ); ?></h2>
 				<ul>
 					<?php
 						wp_list_categories(
@@ -67,7 +67,8 @@ get_header();
 		endif;
 
 		// Display Archives Widget.
-		$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'edxchildtheme' ), convert_smilies( ':)' ) ) . '</p>';
+		/* translators: %1$s: Smiley face emoji */
+		$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'knatcon2020' ), convert_smilies( ':)' ) ) . '</p>';
 		the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
 		// Display Tag Cloud Widget.
