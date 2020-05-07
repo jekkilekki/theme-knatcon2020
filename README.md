@@ -51,28 +51,28 @@ The TwentyTwenty WordPress Theme is distributed under the terms of the GNU GPL v
 
 KNatCon2020 bundles the following third-party resources:
 
-_Recursive Font_
+__Recursive Font__
 Copyright (c) 2019-2020 Arrow Type (https://arrowtype.com/)
-License: SIL Open Font License, 1.1, http://scripts.sil.org/OFL
-Source: https://www.recursive.design/
-GitHub: https://github.com/arrowtype/recursive
+- License: SIL Open Font License, 1.1, http://scripts.sil.org/OFL
+- Source: https://www.recursive.design/
+- GitHub: https://github.com/arrowtype/recursive
 
-_Barlow Font_
+__Barlow Font__
 Copyright (c) 2017-2019 Jeremy Tribby (https://tribby.com/)
-License: SIL Open Font License, 1.1, http://scripts.sil.org/OFL
-Source: https://tribby.com/fonts/barlow/
-GitHub: https://github.com/jpt/barlow/
+- License: SIL Open Font License, 1.1, http://scripts.sil.org/OFL
+- Source: https://tribby.com/fonts/barlow/
+- GitHub: https://github.com/jpt/barlow/
 
-_Font Awesome_
+__Font Awesome__
 Copyright (c) by @davegandy - https://fontawesome.com/ - @fontawesome
-Licenses https://fontawesome.com/license/free/
-Icons: CC BY 4.0 License, https://creativecommons.org/licenses/by/4.0/
-Font: SIL OFL 1.1, https://scripts.sil.org/OFL
-Code: MIT License, https://opensource.org/licenses/MIT
+- Licenses https://fontawesome.com/license/free/
+- Icons: CC BY 4.0 License, https://creativecommons.org/licenses/by/4.0/
+- Font: SIL OFL 1.1, https://scripts.sil.org/OFL
+- Code: MIT License, https://opensource.org/licenses/MIT
 
-_Code from Twenty Twenty_
+__Code from Twenty Twenty__
 Copyright (c) 2019 WordPress.org
-License: GPLv2
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Source: https://wordpress.org/themes/twentytwenty/
+- License: GPLv2
+- License URI: http://www.gnu.org/licenses/gpl-3.0.html
+- Source: https://wordpress.org/themes/twentytwenty/
 KNatCon2020 is a Child Theme of Twenty Twenty.
