@@ -188,9 +188,12 @@ function knatcon2020_custom_login_page() {
 	}
 }
 
+/*
+Redirect all non-logged in users to the login page (now unnecessary).
 if ( ! is_user_logged_in() ) {
 	// add_action( 'init', 'knatcon2020_custom_login_page' );
 }
+*/
 
 /**
  * Private Posts visible to Subscribers
